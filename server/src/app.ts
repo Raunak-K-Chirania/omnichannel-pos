@@ -2,10 +2,12 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import 'express-async-errors';
+
 import authRoutes from './routes/authRoutes';
 import productRoutes from './routes/productRoutes';
 import inventoryRoutes from './routes/inventoryRoutes';
 import orderRoutes from './routes/orderRoutes';
+
 import { errorHandler, notFound } from './middleware/errorMiddleware';
 
 const app = express();
