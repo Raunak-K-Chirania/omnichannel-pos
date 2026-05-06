@@ -11,10 +11,12 @@ const InventorySchema:Schema = new Schema<IInventory>({
     product:{
         type: Schema.Types.ObjectId,
         ref:"Product",
+        required:true,
     },
     store:{
         type: Schema.Types.ObjectId,
         ref:"Store",
+        required:true,
     },
     sku:{
         type:String,
