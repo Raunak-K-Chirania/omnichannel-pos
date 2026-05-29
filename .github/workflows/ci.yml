@@ -9,8 +9,21 @@ permissions:
 
 jobs:
   server:
-    name: Server CI
+    name: Server Lint and Typecheck
     runs-on: ubuntu-latest
+    env:
+      MONGO_URI: mongodb://127.0.0.1:27017/omnichannel-pos-test
+      REDIS_URL: redis://127.0.0.1:6379
+      JWT_SECRET: testsecret_for_vitest
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+      redis:
+        image: redis:7
+        ports:
+          - 6379:6379
     defaults:
       run:
         working-directory: server
