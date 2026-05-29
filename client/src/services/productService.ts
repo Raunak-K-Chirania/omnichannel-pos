@@ -1,4 +1,5 @@
 import api from './api';
+import type { Product } from '../types/product.types';
 
 const isDemoMode = () => {
   const userString = localStorage.getItem('user');
@@ -6,7 +7,9 @@ const isDemoMode = () => {
     try {
       const user = JSON.parse(userString);
       return user && user.token === 'mock-jwt-token-bypass-mode';
-    } catch {}
+    } catch {
+      // ignore json parsing errors
+    }
   }
   return false;
 };
@@ -47,7 +50,7 @@ export const productService = {
     if (isDemoMode()) {
       let prods = getDemoProducts();
       if (params?.search) {
-        prods = prods.filter((p: any) =>
+        prods = prods.filter((p: Product) =>
           p.name.toLowerCase().includes(params.search!.toLowerCase()) ||
           p.category.toLowerCase().includes(params.search!.toLowerCase())
         );
@@ -60,7 +63,7 @@ export const productService = {
 
   async getById(id: string) {
     if (isDemoMode()) {
-      return getDemoProducts().find((p: any) => p._id === id);
+      return getDemoProducts().find((p: Product) => p._id === id);
     }
     const response = await api.get(`/products/${id}`);
     return response.data;
@@ -89,7 +92,7 @@ export const productService = {
   async update(id: string, data: Record<string, unknown>) {
     if (isDemoMode()) {
       let prods = getDemoProducts();
-      prods = prods.map((p: any) => (p._id === id ? { ...p, ...data } : p));
+      prods = prods.map((p: Product) => (p._id === id ? { ...p, ...data } : p));
       localStorage.setItem('demo_products', JSON.stringify(prods));
       return { success: true };
     }
@@ -100,7 +103,7 @@ export const productService = {
   async delete(id: string) {
     if (isDemoMode()) {
       let prods = getDemoProducts();
-      prods = prods.filter((p: any) => p._id !== id);
+      prods = prods.filter((p: Product) => p._id !== id);
       localStorage.setItem('demo_products', JSON.stringify(prods));
       return { success: true };
     }
