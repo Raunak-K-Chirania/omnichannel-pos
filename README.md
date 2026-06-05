@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-=======
-week 1 -:
+
 # Omnichannel POS System
 
 A scalable full-stack Omnichannel POS system built with Node.js, Express.js, TypeScript, MongoDB, and Redis.
@@ -215,8 +213,7 @@ https://omnichannel-pos-1.onrender.com
 
 
 ## 👨‍💻 Author
-
 Raunak Chirania
 Gurnoor Singh
 Akshay Sharma
-Aman Thakur
+Aman R. Thakur
