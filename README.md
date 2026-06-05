@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-=======
-week 1 -:
+
 # Omnichannel POS System
 
 A scalable full-stack Omnichannel POS system built with Node.js, Express.js, TypeScript, MongoDB, and Redis.
@@ -210,9 +208,9 @@ Successfully tested:
 ✅ Redis Connected
 ✅ API Testing Completed
 
-## LIVE LINK FOR BACKEND & FRONTEND
+## LIVE LINK FOR BACKEND
 https://omnichannel-pos-1.onrender.com
-https://omnichannel-pos-1-alpha.vercel.app
+
 
 ## 👨‍💻 Author
 Raunak Chirania
