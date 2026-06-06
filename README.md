@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-=======
-week 1 -:
+
 # Omnichannel POS System
 
 A scalable full-stack Omnichannel POS system built with Node.js, Express.js, TypeScript, MongoDB, and Redis.
